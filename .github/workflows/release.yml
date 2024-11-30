@@ -21,6 +21,15 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: Check version matches tag
+        run: |
+          PKG_VERSION=$(python -c "from osmcp import __version__; print(__version__)")
+          TAG_VERSION=${GITHUB_REF#refs/tags/v}
+          if [ "$PKG_VERSION" != "$TAG_VERSION" ]; then
+            echo "Version mismatch: Package version ($PKG_VERSION) does not match tag version ($TAG_VERSION)"
+            exit 1
+          fi
 
       - name: Install uv
         run: |
@@ -38,3 +47,4 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist/ 
+
