@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "openswissmcp"
+name = "osmcp"
 version = "0.1.0"
 description = "Python MCP servers exposing Swiss Open Data to compatible LLM clients."
 readme = "README.md"
