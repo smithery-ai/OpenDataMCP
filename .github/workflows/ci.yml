@@ -104,8 +104,8 @@ jobs:
         run: |
           uv venv
           source .venv/bin/activate
-          python -m pip install build
-          python -m build
+          uv sync --no-dev
+          uv build
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
