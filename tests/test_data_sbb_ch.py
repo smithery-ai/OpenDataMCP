@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch, Mock
 
-from data_sbb_ch import (
+from osmcp.providers.sbb import (
     fetch_rail_traffic_info,
     TrafficInfoParams,
     handle_rail_traffic_info

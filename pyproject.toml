@@ -36,19 +36,12 @@ dev = [
 pythonpath = ["src"]
 testpaths = ["tests"]
 addopts = "-ra -q"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
 # Configure log format
 log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
 log_cli_date_format = "%Y-%m-%d %H:%M:%S"
 
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/osmcp"]
-
-[project.optional-dependencies]
-dev = [
-    "ruff>=0.3.0",
-    "mypy>=1.8.0",
-    "build>=1.0.3",
-]
-test = [
-    "pytest>=8.0.0",
-]

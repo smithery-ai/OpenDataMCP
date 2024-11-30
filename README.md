@@ -7,7 +7,7 @@
 -> clean, simple, scalable MCP servers for open swiss data
 ->
 
-## How to use
+## Usage
 
 ## Contributing
 
