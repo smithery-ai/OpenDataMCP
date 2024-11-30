@@ -20,6 +20,12 @@ We want to scale!
 * keep things tested with pytest
 * use typehints and pydantic model for input output of api requests
 
+Concretly:
+brew install uv / or other mean to install uv
+git clone
+uv venv
+uv sync
+pre-commit install
 ## Roadmap
 
 data extension
