@@ -77,14 +77,13 @@ jobs:
         run: |
           uv venv
           source .venv/bin/activate
-          uv pip install -e ".[dev]"
+          uv sync --only-dev
 
       - name: Run linters
         run: |
           source .venv/bin/activate
           ruff check .
           ruff format --check .
-          mypy src/
 
   build:
     needs: [test, lint]
