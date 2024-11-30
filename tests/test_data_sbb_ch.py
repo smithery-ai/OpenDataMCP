@@ -4,12 +4,14 @@ from unittest.mock import patch, Mock
 from osmcp.providers.sbb import (
     fetch_rail_traffic_info,
     TrafficInfoParams,
-    handle_rail_traffic_info
+    handle_rail_traffic_info,
 )
+
 
 @pytest.fixture
 def anyio_backend():
     return "asyncio"
+
 
 @pytest.fixture
 def mock_traffic_info_response():
@@ -24,7 +26,7 @@ def mock_traffic_info_response():
                 "author": "SBB",
                 "validitybegin": "2024-01-02T00:00:00Z",
                 "validityend": "2024-01-03T00:00:00Z",
-                "description_html": "<p>Maintenance work between Zürich HB and Oerlikon</p>"
+                "description_html": "<p>Maintenance work between Zürich HB and Oerlikon</p>",
             },
             {
                 "title": "Delays in Bern",
@@ -34,13 +36,14 @@ def mock_traffic_info_response():
                 "author": "SBB",
                 "validitybegin": "2024-01-01T11:00:00Z",
                 "validityend": "2024-01-01T15:00:00Z",
-                "description_html": "<p>Signal failure causing delays</p>"
-            }
-        ]
+                "description_html": "<p>Signal failure causing delays</p>",
+            },
+        ],
     }
 
+
 def test_fetch_rail_traffic_info(mock_traffic_info_response):
-    with patch('httpx.get') as mock_get:
+    with patch("httpx.get") as mock_get:
         mock_get.return_value.json.return_value = mock_traffic_info_response
         mock_get.return_value.raise_for_status = Mock()
 
@@ -52,14 +55,15 @@ def test_fetch_rail_traffic_info(mock_traffic_info_response):
         assert response.results[0].title == "Track maintenance in Zürich"
         assert response.results[1].title == "Delays in Bern"
 
+
 @pytest.mark.anyio
 async def test_handle_rail_traffic_info(mock_traffic_info_response):
-    with patch('httpx.get') as mock_get:
+    with patch("httpx.get") as mock_get:
         mock_get.return_value.json.return_value = mock_traffic_info_response
         mock_get.return_value.raise_for_status = Mock()
-        
+
         result = await handle_rail_traffic_info({"limit": 2})
-        
+
         assert len(result) == 1
         assert result[0].type == "text"
         assert "Track maintenance in Zürich" in result[0].text
