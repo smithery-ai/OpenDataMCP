@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "osmcp"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Python MCP servers exposing Swiss Open Data to compatible LLM clients."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -12,6 +12,9 @@ dependencies = [
     "httpx>=0.28.0",
     "mcp>=1.0.0",
 ]
+
+[tool.hatch.version]
+path = "src/osmcp/__init__.py"
 
 [project.scripts]
 osmcp = "osmcp.cli:main"
