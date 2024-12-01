@@ -50,7 +50,7 @@ log_cli_date_format = "%Y-%m-%d %H:%M:%S"
 
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/odmcp"]
+packages = ["src/odmcp", "packages/odmcp_ch_sbb/src/odmcp_ch_sbb"]
 
 [project.optional-dependencies]
 ch_sbb = [

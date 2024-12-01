@@ -33,13 +33,13 @@ jobs:
           source .venv/bin/activate
           uv sync --all-extras --no-dev
           uv build
-          for pkg in packages/*; do
-            if [ -d "$pkg" ]; then
-              cd "$pkg"
-              uv build --out-dir ../../dist
-              cd ../..
-            fi
-          done
+          # for pkg in packages/*; do
+          #   if [ -d "$pkg" ]; then
+          #     cd "$pkg"
+          #     uv build --out-dir ../../dist
+          #     cd ../..
+          #   fi
+          # done
 
       - name: Check version matches tag
         run: |
