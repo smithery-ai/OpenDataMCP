@@ -37,7 +37,8 @@ jobs:
             if [ -d "$pkg" ]; then
               cd "$pkg"
               uv build
-              mv dist/* ../../dist/
+              mkdir -p ../../dist
+              cp dist/* ../../dist/
               cd ../..
             fi
           done
