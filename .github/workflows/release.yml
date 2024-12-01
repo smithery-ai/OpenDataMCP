@@ -11,9 +11,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      # Needed for PyPI trusted publishing
       id-token: write
-      # Needed for uploading to GitHub releases
       contents: write
     
     steps:
@@ -29,12 +27,20 @@ jobs:
           curl -LsSf https://astral.sh/uv/install.sh | sh
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
 
-      - name: Build package
+      - name: Build packages
         run: |
           uv venv
           source .venv/bin/activate
           uv sync --all-extras --no-dev
           uv build
+          for pkg in packages/*; do
+            if [ -d "$pkg" ]; then
+              cd "$pkg"
+              uv build
+              mv dist/* ../../dist/
+              cd ../..
+            fi
+          done
 
       - name: Check version matches tag
         run: |

@@ -39,9 +39,6 @@ def bump_version(version_type):
     )
     init_file.write_text(new_content)
 
-    # Update uv.lock file
-    run_command("uv lock")
-
     # Git operations
     run_command("git add src/odmcp/__init__.py")
     run_command("git add uv.lock")
