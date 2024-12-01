@@ -36,9 +36,7 @@ jobs:
           for pkg in packages/*; do
             if [ -d "$pkg" ]; then
               cd "$pkg"
-              uv build
-              mkdir -p ../../dist
-              cp dist/* ../../dist/
+              uv build --dist-dir ../../dist
               cd ../..
             fi
           done
