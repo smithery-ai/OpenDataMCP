@@ -198,7 +198,7 @@ wheels = [
 
 [[package]]
 name = "odmcp"
-version = "0.1.10"
+version = "0.1.11"
 source = { editable = "." }
 dependencies = [
     { name = "httpx" },
@@ -237,7 +237,7 @@ dev = [
 
 [[package]]
 name = "odmcp-ch-sbb"
-version = "0.1.10"
+version = "0.1.11"
 source = { editable = "packages/odmcp_ch_sbb" }
 dependencies = [
     { name = "odmcp" },

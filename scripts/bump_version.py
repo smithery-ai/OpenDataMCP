@@ -39,8 +39,12 @@ def bump_version(version_type):
     )
     init_file.write_text(new_content)
 
+    # Update uv.lock file
+    run_command("uv lock")
+
     # Git operations
     run_command("git add src/odmcp/__init__.py")
+    run_command("git add uv.lock")
     run_command(f'git commit -m "release {new_version}: version bump commit"')
     run_command("git push")
     run_command(f"git tag v{new_version}")
