@@ -1,6 +1,7 @@
 # Open Data Model Context Protocol
 
 ![vc3598_Hyper-realistic_Swiss_landscape_pristine_SBB_red_train_p_40803c2e-43f5-410e-89aa-f6bdcb4cd089](https://github.com/user-attachments/assets/80c823dd-0b26-4d06-98f9-5c6d7c9103de)
+<a href="https://smithery.ai/server/odmcp"><img alt="Smithery Badge" src="https://smithery.ai/badge/odmcp"></a>
 <p align="center">
     <em>Connect Open Data to LLMs in minutes!</em>
 </p>
@@ -39,6 +40,14 @@ How do we do that?
 ## Usage
 
 ### <u>Access</u>: Access Open Data using Open Data MCP CLI Tool
+
+#### Installing via Smithery
+
+To install Open Data Model Context Protocol for Claude Desktop automatically via [Smithery](https://smithery.ai/server/odmcp):
+
+```bash
+npx -y @smithery/cli install odmcp --client claude
+```
 
 #### Prerequisites
 
