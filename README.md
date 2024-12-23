@@ -1,7 +1,6 @@
 # Open Data Model Context Protocol
 
 ![vc3598_Hyper-realistic_Swiss_landscape_pristine_SBB_red_train_p_40803c2e-43f5-410e-89aa-f6bdcb4cd089](https://github.com/user-attachments/assets/80c823dd-0b26-4d06-98f9-5c6d7c9103de)
-<a href="https://smithery.ai/server/odmcp"><img alt="Smithery Badge" src="https://smithery.ai/badge/odmcp"></a>
 <p align="center">
     <em>Connect Open Data to LLMs in minutes!</em>
 </p>
@@ -18,6 +17,7 @@
    <a href="https://pepy.tech/badge/odmcp" target="_blank">
       <img src="https://pepy.tech/badge/odmcp?cache-control=no-cache" alt="License">
    </a>
+   <a href="https://smithery.ai/server/odmcp"><img alt="Smithery Badge" src="https://smithery.ai/badge/odmcp"></a>
    <a href="https://github.com/OpenDataMCP/OpenDataMCP/stargazers" target="_blank">
       <img src="https://img.shields.io/github/stars/OpenDataMCP/OpenDataMCP.svg?cache-control=no-cache" alt="Stars">
    </a>
@@ -38,9 +38,6 @@ How do we do that?
 * **Publish**: Use provided templates and guidelines to quickly contribute and publish on Open Data MCP. Make your data easily discoverable!
 
 ## Usage
-
-### <u>Access</u>: Access Open Data using Open Data MCP CLI Tool
-
 #### Installing via Smithery
 
 To install Open Data Model Context Protocol for Claude Desktop automatically via [Smithery](https://smithery.ai/server/odmcp):
@@ -49,6 +46,7 @@ To install Open Data Model Context Protocol for Claude Desktop automatically via
 npx -y @smithery/cli install odmcp --client claude
 ```
 
+### <u>Access</u>: Access Open Data using Open Data MCP CLI Tool
 #### Prerequisites
 
 If you want to use Open Data MCP with Claude Desktop app client you need to install the [Claude Desktop app](https://claude.ai/download).
